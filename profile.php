@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("dbCon.php");
 $name = $_SESSION["name"];
 $sql = "select * from users where user_name='$name'";

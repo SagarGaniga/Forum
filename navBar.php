@@ -7,18 +7,37 @@
     }
     button:focus {outline:0;}
 </style>
-
+<script>
+$(document).ready(function(){
+    $("#post").click(function(){
+        $("#box").load("post.php");
+    });
+	$("#profile").click(function(){
+        $("#box").load("profile.php");
+    });
+});
+</script>
 
 <div class="container-fluid" style="padding: 0px; margin-top: -30px;background: black">
     <nav class="navbar navbar-inverse" style="padding: 0px; margin: 0px" >  
-    <div class="container-fluid" >
+    <div class="container-fluid" id="gg">
         <div class="navbar-header" >
-        <a class="navbar-brand" href="#" style="color:aliceblue">VESITforum</a>
+        <a class="navbar-brand" href="default.php" style="color:aliceblue">VESITforum</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="default.php">Home</a></li>
-            <li><a href="post.php">Post</a></li>
-        </ul>
+            
+			
+			<?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                {
+                    ?>
+						<li><a><button id="post">Post</button></a></li>
+						<li><a><button id="profile">Profile</button></a></li>
+					<?php
+                }
+            ?>
+		</ul>
         <ul class="nav navbar-nav navbar-right">
             <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)

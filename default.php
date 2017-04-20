@@ -7,6 +7,12 @@ session_start();
   <?php
     require("header.php");
   ?>
+  
+<script>
+	$("#post").click(function(){
+		$("#box").load("post.php");
+	});
+</script>
   <body style="padding: 0px; margin: 0px;background: #ECEFF1;width:100%">
     <?php 
       require("background_pic.html");

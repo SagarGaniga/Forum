@@ -110,7 +110,7 @@
     if(isset($_POST["signUp"]) && isset($_POST["class"]))
     {
         require("dbCon.php"); 
-        $class = $_POST["class"];e
+        $class = $_POST["class"];
         $email = $_POST["email"];
         $pass = $_POST["pass"];
         $name = $_POST["uname"];
