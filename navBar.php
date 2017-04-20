@@ -18,7 +18,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="container-fluid" style="padding: 0px; margin-top: -30px;background: black">
+<div class="container-fluid" style="padding: 0px; margin-top: 0px;background: black">
     <nav class="navbar navbar-inverse" style="padding: 0px; margin: 0px" >  
     <div class="container-fluid" id="gg">
         <div class="navbar-header" >
