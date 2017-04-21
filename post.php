@@ -13,7 +13,7 @@
 				<select name="topic" id="topic" class="form-control">
 					<?php
 						require("dbCon.php");
-						$sql="Select topic_name from topic where 1 order by topic_cat";
+						$sql="Select topic_name from topic where 1 order by topic_by";
 						$result=$conn->query($sql);
 						if($result->num_rows>0)
 						{

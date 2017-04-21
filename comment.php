@@ -27,47 +27,51 @@
                     {
                         $row = $result->fetch_assoc();
                         require("part1.html");
-                        echo "#".$row["post_id"]." ".$row["post_title"];
+                        $sql1 = "select topic_name from topic where topic_id = ".$row["post_topic"];
+                        $topic = $conn->query($sql1);
+                        $raw = $topic->fetch_array();
+                        echo "<a href=\"comment.php?postid=".$row["post_id"]."\" style=\"color: white\">".$raw["0"]." > ".$row["post_title"]."</a>";
                         require("part2.html");
                         echo "<p>";
                         echo $row["post_content"];
                         echo "</p>";
                         
-                        echo "<p>Posted On: ".$row["post_date"]."</p>";
                         
-                        $sql1 = "select topic_name from topic where topic_id = ".$row["post_topic"];
-                        $topic = $conn->query($sql1);
-                        $raw = $topic->fetch_array();
-                        echo "<p>Post Topic: ".$raw[0]."</p>";
                         
                         $sql1 = "select user_name from users where user_id = ".$row["post_by"];
                         $topic = $conn->query($sql1);
                         $raw = $topic->fetch_array();
-                        echo "<p>Post By: ".$raw[0]."</p>";
                         //echo "<p>Posted By: ".$row["post_by"]."</p>";
-                        
-                        require("part3.html");
+                        echo"</div>";
+                                echo"<div class=\"panel-footer\">"; 
+                                    echo "<p>Post By: ".$raw[0]."<br>";
+                                    echo "Posted On: ".$row["post_date"]."<br>";                    
+                                echo"</div>";
+                            echo"</div>";
+                        echo"</div>";
 
                         $sql = "select * from comment where com_post=\"".$postid."\"";
                         $result = $conn->query($sql);
                         if($result->num_rows > 0)
                         {
                             while($row = $result->fetch_assoc())
-                            {
+                            {                               
+                                $sql1 = "select user_name from users where user_id = ".$row["com_by"];
+                                $topic = $conn->query($sql1);
+                                $raw = $topic->fetch_array();
                                 require("part1.html");
+                                echo "<p>Comment By: ".$raw[0]."<br>"; 
                                 require("part2.html");
                                 echo "<p>";
                                 echo $row["com_content"];
                                 echo "</p>";
-                                
-                                echo "<p>Posted On: ".$row["com_date"]."</p>";
-                                
-                                $sql1 = "select user_name from users where user_id = ".$row["com_by"];
-                                $topic = $conn->query($sql1);
-                                $raw = $topic->fetch_array();
-                                echo "<p>Comment By: ".$raw[0]."</p>";
-                                
-                                require("part3.html");
+
+                                    echo"</div>";
+                                        echo"<div class=\"panel-footer\">";                                        
+                                            echo "Posted On: ".$row["com_date"]."</p>";  
+                                        echo"</div>";
+                                    echo"</div>";
+                                echo"</div>";
                             }
                         }        
                     }
