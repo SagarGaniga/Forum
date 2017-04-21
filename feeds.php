@@ -8,7 +8,7 @@
         while($row = $result->fetch_assoc())
         {
             require("part1.html");
-            echo "#".$row["post_id"]." ".$row["post_title"];
+            echo "<a href=\"comment.php?postid=".$row["post_id"]."\" style=\"color: white\">#".$row["post_id"]." ".$row["post_title"]."</a>";
             require("part2.html");
             echo "<p>";
             echo $row["post_content"];

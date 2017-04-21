@@ -2,7 +2,7 @@
 <div class="modal-body row-fluid">
   <div class="col-md-8" id="box">
     <?php
-require("feeds.php");
+      require("feeds.php");
     ?>
   </div>
   <div class="col-md-4">

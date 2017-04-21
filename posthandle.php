@@ -14,5 +14,5 @@
 	//echo $topicid;
 	$sql="insert into posts(post_title,post_by,post_content,post_topic,post_cat,post_date) values('$title','$userid','$content','$topicid','$topicCat','$date')";
 	$conn->query($sql);
-	header("location:search_result.php");
+	header("location:default.php");
 ?>
