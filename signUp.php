@@ -22,30 +22,36 @@
           
           <form action="signUp.php" method="post">
           
-          <div class="top-row">
+          
             <div class="field-wrap">
               <label>
                 User Name<span class="req">*</span>
               </label>
               <input type="text" required autocomplete="off" name="uname"/>
             </div>
-            
+          <div class="top-row" style="padding-bottom: 0px border:0px">
+            <div class="field-wrap">
+                <select name="class" required autocomplete="off" style="background:none;border:1px solid #bdbdbd;padding:7px;width:100%;font-size:17px;color:#a0b3b0" id="Details">
+                  <option value="Not Specified" disabled selected style="background-color: #24313c">User Type</option>
+                  <option value="INFT" style="background-color: #24313c">Student</option>
+                  <option value="COMPS" style="background-color: #24313c">Faculty</option>
+                </select>
+            </div>
+
             <div class="field-wrap">
                 <!--<label>
                   Department<span class="req">*</span>
                 </label>
                 <input type="text"required autocomplete="off" name="class"/>-->
-                <select name="class" required autocomplete="off" style="background:none;border:1px solid #bdbdbd;padding:7px;width:100%;font-size:17px;color:white">
-                  <option value="Not Specified">Department</option>
-                  <option value="INFT">INFT</option>
-                  <option value="COMPS">COMPS</option>
-                  <option value="EXTC">EXTC</option>
-                  <option value="ETRX">ETRX</option>
-                  <option value="INST">INST</option>
+                <select name="class" required autocomplete="off" style="background:none;border:1px solid #bdbdbd;padding:7px;width:100%;font-size:17px;color:#a0b3b0" id="Details">
+                  <option value="Not Specified" disabled selected style="background-color: #24313c">Department</option>
+                  <option value="INFT" style="background-color: #24313c">INFT</option>
+                  <option value="COMPS" style="background-color: #24313c">COMPS</option>
+                  <option value="EXTC" style="background-color: #24313c">EXTC</option>
+                  <option value="ETRX" style="background-color: #24313c">ETRX</option>
+                  <option value="INST" style="background-color: #24313c">INST</option>
+                  <option value="INFT" style="background-color: #24313c">Humanities</option>
                 </select>
-
-
-
             </div>
             
           </div>
@@ -104,6 +110,18 @@
 
     <script src="js/index.js"></script>
 
+<script type="text/javascript">
+ function checkForm() {
+         if((document.getElementById("Details")).selectedIndex == 0)
+        {
+            alert('This field is required');
+            return false;
+        }
+        else{
+          return true;
+        }    
+}
+</script>
 </body>
 <?php
   // echo "ff";

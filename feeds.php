@@ -15,6 +15,7 @@
             echo "</p>";
             
             echo "<p>Posted On: ".$row["post_date"]."</p>";
+            echo "<p><a href=\"comment.php?postid=".$row["post_id"]."\" style=\"color: blue\">Comments: ".$row["Com_count"]."</a></p>";
             
             $sql1 = "select topic_name from topic where topic_id = ".$row["post_topic"];
             $topic = $conn->query($sql1);

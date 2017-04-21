@@ -71,14 +71,15 @@
                             }
                         }        
                     }
+                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                    {
+                        require("commentOption.php");
+                    }
+                    else
+                    {
+                        echo "<p>Hello Guest. <a href=\"signUp.php\">Register</a> or <a href=\"signUp.php\">Login</a> to Comment</p>";
+                    }
                 ?>
-                <form id="newcomment" method="post" action="commenthandle.php">
-                    <div class="form-group">
-                        <label for="content">Comment:</label><br>
-                        <textarea name="content" form="newcomment" class="form-control" rows="6" id="content"></textarea><br><br>
-                        <input type="submit" name="submit" value="Comment" class="btn-lg btn-primary">
-                    </div>
-                </form>
             </div>
             <div class="col-md-4">
             <!-- Your second column here -->
