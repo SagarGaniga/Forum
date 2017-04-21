@@ -16,9 +16,9 @@
                     while($raw=$res->fetch_assoc())
                     {
                         echo "<br>";
-                        echo "<a href=\"#\">".$raw["topic_name"]."</a>";
+                        echo "<a href=\"#\">--".$raw["topic_name"]."</a>";
                     }
-                    echo "<br>";   
+                    echo "<br><br>";   
                 }
             }
         ?>
