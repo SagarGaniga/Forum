@@ -15,6 +15,9 @@ $(document).ready(function(){
 	$("#profile").click(function(){
         $("#box").load("profile.php");
     });
+	$("#home").click(function(){
+        $("#box").load("feeds.php");
+    });
 });
 </script>
 
@@ -25,7 +28,7 @@ $(document).ready(function(){
         <a class="navbar-brand" href="default.php" style="color:aliceblue">VESITforum</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="default.php">Home</a></li>
+            <li><a><button id="home">Home</button></a></li>
             
 			
 			<?php
